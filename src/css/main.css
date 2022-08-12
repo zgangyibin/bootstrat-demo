@@ -1,0 +1,183 @@
+body {
+    background-color: #f1f1f1;
+}
+a {
+    text-decoration: none;
+}
+a:hover {
+    color: blue;
+}
+/* 元素样式 */
+.nav--active {
+    color: yellow !important;
+}
+.hover-animate a {
+    position: relative;
+    z-index: 1;
+}
+.hover-animate>a::after {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    content: '';
+    display: block;
+   
+    width: 0;
+    height: 100%;
+    background-color: blue;
+    z-index: -1;
+}
+.hover-animate>a:hover::after{
+    width: 100%;
+    left: 0;
+    transition: all 0.5s;
+}
+.title {
+    padding: 10px ;
+    border-bottom: 1px dashed gray;
+}
+.article-con{
+    /* 多行文本溢出省略 */
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+}
+.link-dark:hover {
+    color: blue;
+}
+.f14 {
+    font-size: 14px;
+}
+.tab-btn {
+    padding: 5px;
+    font-size: 16px;
+}
+.recommend-a {
+    /* 计数器 */
+    counter-reset: a;
+}
+.recommend-a>a {
+    display: flex;
+    color: #000;
+    justify-content: space-between;
+}
+.recommend-a>a::before{
+    counter-increment: a;
+    content: counter(a);
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    background-color: #ccc;
+    color: #fff;
+}
+.recommend-a>a:nth-child(1)::before,.recommend-a>a:nth-child(2)::before,.recommend-a>a:nth-child(3)::before{
+    background-color: orangered;
+}
+.recommend-a>a span {
+    line-height: 20px;
+    width: calc(100% - 120px);
+}
+.recommend-a>a em {
+    width: 80px;
+
+}
+.border-dashed {
+    border-bottom-style: dashed;
+}
+.border-dashed>span {
+    width: 100px;
+}
+.border-dashed>a {
+    width: calc(100% - 100px);
+}
+.shandow-animate:hover {
+    box-shadow: 0 0 5px 5px rgba(0,0,0,0.1)!important;
+    transition: box-shadow 0.5s !important;
+}
+/* 推荐博主 */
+.recommend-blagger button{
+    width: 43%;
+    height: 35px;
+    line-height: 35px;
+}
+.recommend-blagger a {
+    width: 100%;
+    height: 100%;
+
+}
+/* 标签云 */
+.card-btn1>a:hover {
+    background-color: red !important;
+    color: white !important;
+}
+
+/* 代码部分 */
+pre {
+    background-color: #f7f7f7;
+    border: 1px solid #e5e5e5;
+}
+.recommend-blagger a:hover{
+    background-color: red;
+    color: #fff !important;
+}
+/* 重写bootstrap样式 */
+.btn-info {
+    background-color: #17a2b8;
+    color: #fff;
+    border-color: #17a2b8;
+
+}
+
+.btn-info:hover {
+    background-color: #0b7f91;
+}
+.bg-info {
+    background-color: #17a2b8 !important;
+}
+/* 右边元素飞入动画 */
+.right-animate{
+    position: relative;
+    animation: animationr 1s;
+}
+@keyframes animationr{
+    from{
+        left:100%;
+        opacity: 0;
+    }
+    to {
+        left: 0;
+        opacity: 1;
+    }
+}
+/* 从下往上飞入 */
+.bottom-to-up {
+    position: relative;
+    animation: btuanimationr 0.5s;
+}
+@keyframes btuanimationr{
+    from{
+        bottom: -50vh;
+        opacity: 0;
+    }
+    to {
+        bottom: 0;
+        opacity: 1;
+    }
+}
+/* 从上往下 */
+.top-to-bottom {
+    position: relative;
+    animation: btuanimationr1 0.5s;
+}
+@keyframes btuanimationr1{
+    from{
+        top: -50vh;
+        opacity: 0;
+    }
+    to {
+        top: 0;
+        opacity: 1;
+    }
+}
